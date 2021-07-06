@@ -1,0 +1,23 @@
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Pano ToolBox.exe
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Pano ToolBox.deps.json
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Pano ToolBox.runtimeconfig.json
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Pano ToolBox.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\ref\Pano ToolBox.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Pano ToolBox.pdb
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox_MarkupCompile.cache
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox_MarkupCompile.lref
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.g.resources
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.AssemblyInfoInputs.cache
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.AssemblyInfo.cs
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.csproj.CoreCompileInputs.cache
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.csproj.CopyComplete
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\ref\Pano ToolBox.dll
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.pdb
+C:\Users\yyzyu\Desktop\Pano 2 Dev\Pano ToolBox\Pano ToolBox\Pano ToolBox\obj\Debug\net6.0-windows\Pano ToolBox.genruntimeconfig.cache

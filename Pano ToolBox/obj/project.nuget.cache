@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mf4B4D3rLWxQVJ8GIKuL0dstgHXZb9bRuJlkrrir2p5rA8K+suW3YjRZHZ3DKpJCnESGHmkN0k+KydzFKJRQzw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\yyzyu\\Desktop\\Pano 2 Dev\\Pano ToolBox\\Pano ToolBox\\Pano ToolBox\\Pano ToolBox.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yyzyu\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\yyzyu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
