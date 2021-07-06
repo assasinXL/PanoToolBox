@@ -12,11 +12,23 @@ namespace Pano_ToolBox
         public MainWindow()
         {
             InitializeComponent();
-            var lsFiles = new GetFileList();
-            var xlsxfiles = lsFiles.GetList("txt");
-            foreach(var file in xlsxfiles)
+        }
+
+        private void xlsxlist_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (this.IsLoaded)
             {
-                MessageBox.Show(file);
+                var lsFile = new GetFileList();
+                var xlsxfiles = lsFile.GetList();
+                if(xlsxfiles.Count == 0)
+                {
+                    this.msgbox.AppendText("no xlsx files.");
+                    return;
+                }
+                foreach(var file in xlsxfiles)
+                {
+                    this.xlsxlist.Items.Add(file);
+                }
             }
         }
     }
@@ -26,15 +38,13 @@ namespace Pano_ToolBox
     /// </summary>
     public partial class GetFileList
     {
-        private string cwd = Directory.GetCurrentDirectory();
-        public List<string> GetList(string ext)
+        public List<string> GetList()
         {
-            var xlsxroot = new DirectoryInfo($"{this.cwd}/xlsx");
-            var xlsxfiles = xlsxroot.GetFiles($"*.{ext}");
+            var xlsxfiles = new DirectoryInfo($"{Directory.GetCurrentDirectory()}/xlsx").GetFiles($"*.xlsx");
             var filelist = new List<string>();
             foreach (var file in xlsxfiles)
             {
-                filelist.Add(file.ToString());
+                filelist.Add(new FileInfo(file.FullName).Name);
             }
             return filelist;
         }
