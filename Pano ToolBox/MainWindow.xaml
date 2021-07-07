@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <Menu x:Name="menu" FontSize="18" Grid.ColumnSpan="2" Margin="0,0,0,390" HorizontalAlignment="Left" Width="600">
             <MenuItem Header="1" x:Name="a">
-                <MenuItem Header="11" x:Name="a1"/>
+                <MenuItem Header="11" x:Name="a1" Click="Run_Click"/>
             </MenuItem>
         </Menu>
         <ListView x:Name="xlsxlist" Margin="350,30,10,150" Loaded="xlsxlist_Loaded" Grid.ColumnSpan="2"/>
