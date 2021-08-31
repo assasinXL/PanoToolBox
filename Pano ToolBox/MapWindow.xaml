@@ -1,0 +1,26 @@
+﻿<Window x:Class="Pano_ToolBox.MapWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pano_ToolBox"
+        mc:Ignorable="d"
+        Title="导览图编辑/全景图预览" Height="600" Width="900" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+
+        <Button x:Name="Cancel" Content="取消" FontSize="18" Margin="10,0,0,10" Click="Cancel_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="250"/>
+        <Button x:Name="Refresh" Content="保存并刷新" FontSize="18" Margin="10,0,0,10" Click="Refresh_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="250"/>
+        <Button x:Name="Save" Content="保存并关闭" FontSize="18" Margin="0,0,10,10" Click="Save_Click" Height="30" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Right" Width="250"/>
+        <Label x:Name="Name" Content="景区名称" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Margin="40,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="40" Width="106"/>
+        <TextBlock x:Name="mapsize_pc" FontSize="18" HorizontalAlignment="Left" Margin="40,60,0,0" TextWrapping="Wrap" Text="地图大小（电脑）" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBox x:Name="mapsize_pc_value" FontSize="18" HorizontalAlignment="Left" Margin="200,60,0,0" TextWrapping="Wrap" Text="1.0" VerticalAlignment="Top" Height="30" Width="50"/>
+        <TextBlock x:Name="mapsize_mb" FontSize="18" HorizontalAlignment="Left" Margin="40,100,0,0" TextWrapping="Wrap" Text="地图大小（手机）" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="mapsize_mb_value" FontSize="18" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="1.0" VerticalAlignment="Top" Height="30" Width="50"/>
+        <TextBlock x:Name="spotsize_pc" FontSize="18" HorizontalAlignment="Left" Margin="40,140,0,0" TextWrapping="Wrap" Text="地标大小（电脑）" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="spotsize_pc_value" FontSize="18" Margin="200,140,0,0" TextWrapping="Wrap" Text="1.0" VerticalAlignment="Top" Height="30" HorizontalAlignment="Left" Width="50"/>
+        <TextBlock x:Name="spotsize_mb" FontSize="18" HorizontalAlignment="Left" Margin="40,180,0,0" TextWrapping="Wrap" Text="地标大小（手机）" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="spotsize_mb_value" FontSize="18" HorizontalAlignment="Left" Margin="200,180,0,0" TextWrapping="Wrap" Text="1.0" VerticalAlignment="Top" Height="30" Width="50"/>
+        <WebBrowser x:Name="browser" Margin="260,10,10,45"/>
+
+    </Grid>
+</Window>

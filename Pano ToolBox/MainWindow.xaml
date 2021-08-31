@@ -5,27 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pano_ToolBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="299*"/>
-            <ColumnDefinition Width="301*"/>
-        </Grid.ColumnDefinitions>
-        <Menu x:Name="menu" FontSize="18" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="600" Height="25" VerticalAlignment="Top">
-            <MenuItem Header="功能" x:Name="Project">
-                <MenuItem Header="制作项目" x:Name="Generate" Click="Run_Generate"/>
-                <MenuItem Header="启动Krpano工具" x:Name="Krpano" Click="Run_Krpano"/>
-                <MenuItem Header="启动Krpano服务器" x:Name="Server" Click="Run_Server"/>
-                <MenuItem Header="退出程序" x:Name="Quit" Click="Run_Quit"/>
+        Title="全景工具箱" Height="520" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+    <Grid Height="485">
+        <Menu x:Name="menu" FontSize="18" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="项目" x:Name="Project">
+                <MenuItem Header="制作" x:Name="mMakeProject">
+                    <MenuItem Header="一键生成" x:Name="mGenerate" Click="Run_Generate"/>
+                    <MenuItem Header="预览/编辑全景图" x:Name="mPreview" Click="Run_Preview"/>
+                    <MenuItem Header="添加导览箭头" x:Name="mCursor" Click="Run_Cursor"/>
+                    <MenuItem Header="添加导览地标" x:Name="mMapper" Click="Run_Mapper"/>
+                </MenuItem>
+                <MenuItem Header="退出" x:Name="Quit" Click="Run_Quit"/>
             </MenuItem>
+            <MenuItem Header="启动Krpano工具" x:Name="Krpano" Click="Run_Krpano"/>
+            <MenuItem Header="启动Krpano服务器" x:Name="Server" Click="Run_Server"/>
+            <MenuItem Header="关于" x:Name="About" Click="Run_About"/>
         </Menu>
-        <Button x:Name="Run" Content="制作项目" FontSize="18" Margin="10,190,280,0" VerticalAlignment="Top" Height="50" Click="Run_Generate" Grid.ColumnSpan="2"/>
-        <Button x:Name="Refresh" Content="刷新列表" FontSize="18" VerticalAlignment="Top" Height="30" Click="Run_Refresh" Margin="23,420,10,0" Grid.Column="1"/>
-        <Button x:Name="Cursor" Content="添加导览箭头" FontSize="18" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="Run_Cursor"/>
-        <ListView x:Name="xlsxlist" Margin="23,30,10,52" Loaded="xlsxlist_Loaded" Grid.Column="1"/>
-        <RichTextBox x:Name="msgbox" Margin="10,250,280,10" IsReadOnly="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="map"     Content="导览图" FontSize="18" Margin="10,50,0,0" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <CheckBox x:Name="voice"   Content="音频" FontSize="18" Margin="10,75,0,0" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <CheckBox x:Name="contact" Content="联系方式" FontSize="18" Margin="10,100,0,0" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="MapWindow" Content="编辑导览图/预览全景图" FontSize="18" Margin="10,130,0,0" VerticalAlignment="Top" Height="30" Click="Show_MapWindow" HorizontalAlignment="Left" Width="310"/>
+        <Button x:Name="Generate" Content="一键生成" FontSize="18" Margin="10,170,0,0" VerticalAlignment="Top" Height="50" Click="Run_Generate" HorizontalAlignment="Left" Width="310"/>
+        <Button x:Name="Refresh" Content="刷新列表" FontSize="18" Click="Run_Refresh" Margin="325,0,10,10" Height="35" VerticalAlignment="Bottom"/>
+        <Button x:Name="Cursor" Content="添加导览箭头" FontSize="18" Margin="180,85,0,0" VerticalAlignment="Top" Height="35" Click="Run_Cursor" HorizontalAlignment="Left" Width="140"/>
+        <Button x:Name="Mapper" Content="添加导览地标" FontSize="18" Margin="10,85,0,0" VerticalAlignment="Top" Height="35" Click="Run_Mapper" HorizontalAlignment="Left" Width="150"/>
+        <ListView x:Name="xlsxlist" Margin="10,230,0,10" Loaded="xlsxlist_Loaded" HorizontalAlignment="Left" Width="310"/>
+        <RichTextBox x:Name="msgbox" Margin="325,30,10,50" IsReadOnly="True"/>
+        <CheckBox x:Name="map"     Content="导览图" FontSize="18" Margin="140,50,0,0" IsChecked="True" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="voice"   Content="音频" FontSize="18" Margin="244,50,0,0" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86"/>
+        <CheckBox x:Name="contact" Content="联系方式" FontSize="18" Margin="25,50,0,0" IsChecked="True" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left"/>
     </Grid>
 </Window>

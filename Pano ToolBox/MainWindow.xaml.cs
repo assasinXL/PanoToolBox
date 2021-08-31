@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Windows;
 using System.Data;
 using System.IO;
 using System.Xml.Linq;
 using System.Diagnostics;
 using System.Threading;
+using System.Collections.Generic;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using HtmlAgilityPack;
@@ -58,7 +59,7 @@ namespace Pano_ToolBox
             foreach (var item in items)
             {
                 // Read Excel
-                var projname = this.program.ExcelToMemory(item.ToString());
+                var projname = this.program.ExcelToMemory($"{Directory.GetCurrentDirectory()}/xlsx/{item.ToString()}");
                 this.msgbox.AppendText($"---------- {projname} ----------\n");
                 this.msgbox.AppendText($"Excel文件读取完成。\n");
                 // Make Pano
@@ -95,17 +96,46 @@ namespace Pano_ToolBox
             }
             foreach(var item in items)
             {
+                var projname = this.program.ExcelToMemory($"{Directory.GetCurrentDirectory()}/xlsx/{item.ToString()}");
                 var krpanodir = $"{Directory.GetCurrentDirectory()}/tool/krpano";
                 var krpano = new Process()
                 {
                     StartInfo = new ProcessStartInfo($"\"{krpanodir}/krpano Tools.exe\"",
-                    $"\"{Directory.GetCurrentDirectory()}/output/{item.ToString().Split(".")[0]}/tour.xml\"")
+                    $"\"{Directory.GetCurrentDirectory()}/output/{projname}/tour.xml\"")
                 };
                 krpano.Start();
                 krpano.WaitForExit();
                 krpano.Close();
             }
-
+        }
+        private void Run_Mapper(object sender, RoutedEventArgs e)
+        {
+            var items = this.xlsxlist.SelectedItems;
+            if (items.Count == 0)
+            {
+                this.msgbox.AppendText("请点选xlsx文件后再执行操作。\n");
+                return;
+            }
+            foreach (var item in items)
+            {
+                var projname = this.program.ExcelToMemory($"{Directory.GetCurrentDirectory()}/xlsx/{item.ToString()}");
+                var mapperdir = $"{Directory.GetCurrentDirectory()}/tool/mapper";
+                var mapper = new Process()
+                {
+                    StartInfo = new ProcessStartInfo($"\"{mapperdir}/MapHelper.exe\"",
+                    $" -m \"{Directory.GetCurrentDirectory()}/output/{projname}/resources/map.png\"" +
+                    $" -x \"{Directory.GetCurrentDirectory()}/output/{projname}/resources/showmap.xml\"" +
+                    $" -s \"{Directory.GetCurrentDirectory()}/output/{projname}/spotinfo.xml\"")
+                };
+                mapper.Start();
+                mapper.WaitForExit(); 
+                if (mapper.ExitCode == 0)
+                {
+                    // TODO
+                    this.msgbox.AppendText("exit code 0.\n");
+                }
+                mapper.Close();
+            }
         }
         private void Run_Krpano(object sender, RoutedEventArgs e)
         {
@@ -134,6 +164,55 @@ namespace Pano_ToolBox
         private void Run_Quit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+        private void Run_About(object sender, RoutedEventArgs e)
+        {
+            string text = 
+                "程序名称：全景助手\n" +
+                "程序作者：Lenny Tsao\n" +
+                "当前版本：3.3.0\n";
+            MessageBox.Show(text);
+        }
+        private void Show_MapWindow(object sender, RoutedEventArgs e)
+        {
+            var items = this.xlsxlist.SelectedItems;
+            if (items.Count == 0)
+            {
+                this.msgbox.AppendText("请点选xlsx文件后再执行操作。\n");
+                return;
+            }
+            foreach (var item in items)
+            {
+                var mapwindow = new MapWindow();
+                mapwindow.Owner = this;
+                var projname = this.program.ExcelToMemory($"{Directory.GetCurrentDirectory()}/xlsx/{item.ToString()}");
+                var file = $"{Directory.GetCurrentDirectory()}/output/{projname}/resources/showmap.xml";
+                XElement root = XElement.Load(file);
+                foreach (var layer in root.Elements("layer"))
+                {
+                    if (layer.Attribute("name").Value.ToString() == "mapcontainer")
+                    {
+                        mapwindow.mapsize_pc_value.Text = layer.Attribute("scale.normal").Value;
+                        mapwindow.mapsize_mb_value.Text = layer.Attribute("scale.mobile").Value;
+                    }
+                }
+                foreach (var style in root.Elements("style"))
+                {
+                    if (style.Attribute("name").Value.ToString() == "spot")
+                    {
+                        mapwindow.spotsize_pc_value.Text = style.Attribute("scale.normal").Value;
+                        mapwindow.spotsize_mb_value.Text = style.Attribute("scale.mobile").Value;
+                    }
+                }
+                mapwindow.Name.Content = projname;
+                mapwindow.browser.Source = new Uri($"{Directory.GetCurrentDirectory()}/output/{projname}/index.html");
+                mapwindow.ShowDialog();
+            }
+        }
+
+        private void Run_Preview(object sender, RoutedEventArgs e)
+        {
+            this.Show_MapWindow(sender, e);
         }
     }
 
@@ -383,7 +462,10 @@ namespace Pano_ToolBox
             }
             var scenelist = root.Elements("scene");
             if (this.voicemode == "是")
-                root.SetElementValue("action", "if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); ); loadscene(get(startscene), null, MERGE); if (startactions !== null, startactions() ); init_voice(vc1, 'resources/1.mp3');");
+                root.SetElementValue("action", 
+                    "if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); ); " +
+                    "loadscene(get(startscene), null, MERGE); if (startactions !== null, startactions() ); " +
+                    "init_voice(vc1, 'resources/1.mp3');");
             foreach (var scene in scenelist)
             {
                 int index = int.Parse(scene.Attribute("title").Value);
