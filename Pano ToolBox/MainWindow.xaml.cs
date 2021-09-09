@@ -167,10 +167,10 @@ namespace Pano_ToolBox
         }
         private void Run_About(object sender, RoutedEventArgs e)
         {
-            string text = 
-                "程序名称：全景助手\n" +
+            string text =
+                "程序名称：Krpano 全景生成器辅助软件\n" +
                 "程序作者：Lenny Tsao\n" +
-                "当前版本：3.3.0\n";
+                "当前版本：1.0\n";
             MessageBox.Show(text);
         }
         private void Show_MapWindow(object sender, RoutedEventArgs e)

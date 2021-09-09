@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pano_ToolBox"
         mc:Ignorable="d"
-        Title="全景工具箱" Height="520" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="Krpano 全景生成器辅助软件V1.0" Height="520" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Grid Height="485">
         <Menu x:Name="menu" FontSize="18" Height="25" VerticalAlignment="Top">
             <MenuItem Header="项目" x:Name="Project">
